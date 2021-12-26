@@ -1,0 +1,9 @@
+{
+	"name": "ADFKelly1",
+	"location": "australiaeast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4127010f-9544-4add-9c12-949855e0cf1b",
+		"tenantId": "6bf1e508-1fcb-4b8f-aab6-11253f012d19"
+	}
+}
