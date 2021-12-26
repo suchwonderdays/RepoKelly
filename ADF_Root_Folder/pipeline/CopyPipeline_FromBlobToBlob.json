@@ -1,0 +1,72 @@
+{
+	"name": "CopyPipeline_FromBlobToBlob",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_dbp",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "ctkelly//inputEmp.txt"
+					},
+					{
+						"name": "Destination",
+						"value": "ctkelly//outputEmp.txt"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": false,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 0
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "MergeFiles"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_dbp",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_dbp",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-12-25T06:09:39Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
