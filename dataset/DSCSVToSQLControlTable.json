@@ -1,0 +1,36 @@
+{
+	"name": "DSCSVToSQLControlTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseDest",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MyProject/Staging/CSVToSQL"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SrcContainer",
+				"type": "varchar"
+			},
+			{
+				"name": "SrcFileName",
+				"type": "varchar"
+			},
+			{
+				"name": "SrcFileFilter",
+				"type": "varchar"
+			},
+			{
+				"name": "DestTable",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FileToSQLControlTable"
+		}
+	}
+}
