@@ -5,13 +5,21 @@
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "outputEmp.txt",
-				"container": "ctkelly"
+				"fileName": {
+					"value": "@concat(dataset().FileName,utcNow(),'.txt')",
+					"type": "Expression"
+				},
+				"container": "archive"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

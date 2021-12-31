@@ -1,0 +1,36 @@
+{
+	"name": "SQLDBDest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseDest",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TableName": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "MyProject/Staging/CSVToSQL"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "FirstName",
+				"type": "varchar"
+			},
+			{
+				"name": "LastName",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
+		}
+	}
+}
