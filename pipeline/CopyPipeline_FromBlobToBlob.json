@@ -39,8 +39,7 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings",
-							"copyBehavior": "MergeFiles"
+							"type": "AzureBlobStorageWriteSettings"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -54,13 +53,19 @@
 				"inputs": [
 					{
 						"referenceName": "SourceDataset_dbp",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": "inputEmp.txt"
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "DestinationDataset_dbp",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": "inputEmp.txt"
+						}
 					}
 				]
 			}
