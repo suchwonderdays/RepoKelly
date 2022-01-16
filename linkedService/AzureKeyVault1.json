@@ -3,7 +3,8 @@
 	"properties": {
 		"parameters": {
 			"baseUrl": {
-				"type": "String"
+				"type": "String",
+				"defaultValue": "kelly.vault.azure.com"
 			}
 		},
 		"annotations": [],
