@@ -1,10 +1,15 @@
 {
 	"name": "AzureKeyVault1",
 	"properties": {
+		"parameters": {
+			"baseUrl": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
-			"baseUrl": "kelly.vault.azure.com"
+			"baseUrl": "@{linkedService().baseUrl"
 		}
 	}
 }
